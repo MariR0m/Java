@@ -20,11 +20,8 @@ public class HW2_task1 {
           String [] words = filter.split(", ");
           List<String> validWords = new ArrayList<>();
           for (String word : words) {
-              // System.out.println(word);
               String word2 [] = word.split(":");
                if (!word2[1].equals("null")) {
-                 // request = request + word2[0] + " = " + word2[1] + " AND ";
-                 // System.out.println(request);
                  validWords.add(word2[0] + " = " + word2[1]);
                }
           }
