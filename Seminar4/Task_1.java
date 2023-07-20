@@ -20,8 +20,6 @@ import javax.swing.text.html.HTMLDocument.Iterator;
 public class Task_1 {
     Integer a;
     Integer b;
-    Deque<Integer> deque1;
-    Deque<Integer> deque2;
     Deque<Integer> deque11;
     Deque<Integer> deque22;
 
@@ -33,10 +31,9 @@ public class Task_1 {
         System.out.println("Введите число b: ");
         b = in.nextInt();
         in.close();
-        deque1 = spl(a);
-        deque2 = spl(b);
-        deque11 = deque1;
-        deque22 = deque2;
+        deque11 = spl(a);
+        deque22 = spl(b);
+
     }
 
     public Deque<Integer> spl(int a) {
@@ -155,7 +152,7 @@ public class Task_1 {
             }
         else if (a!=0 && b==0) { 
             while (!deque11.isEmpty()) {
-                int digit1 = deque1.isEmpty() ? 0 : deque11.removeFirst();
+                int digit1 = deque11.isEmpty() ? 0 : deque11.removeFirst();
                 int sum = digit1;
                 result.addFirst(sum);
                 }
