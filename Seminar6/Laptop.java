@@ -8,9 +8,9 @@ public class Laptop {
     private String model;
     private String oc;
     private String colour;
-    private String ram;
+    private Integer ram;
        
-    public Laptop(String model, String oc, String colour, String ram) {
+    public Laptop(String model, String oc, String colour, Integer ram) {
         this.model = model;
         this.oc = oc;
         this.colour = colour;
@@ -45,7 +45,7 @@ public class Laptop {
         this.colour = colour;
     }
      
-    public int getRam() {
+    public Integer getRam() {
         return this.ram;
     }
      
@@ -60,52 +60,8 @@ public class Laptop {
 
 
 
-    static Set<Laptop> filterLaptops(Set<Laptop> laptops, Map<Integer, Object> meanings) {
-        Set<Laptop> res = new HashSet<>();
 
-        for (Laptop laptop : laptops) {
-            boolean ok = true;
-
-            for (Map.Entry<Integer, Object> entry : meanings.entrySet()) {
-                int meaning = entry.getKey();
-                Object val = entry.getValue();
-
-                switch (meaning) {
-                    case 1:
-                        if (!laptop.getOC().equals(val)) {
-                            ok = false;
-                        }
-                        break;
-
-                    case 2:
-                        if (!laptop.getModel().equals(val)) {
-                            ok = false;
-                        }
-                        break;
-
-                    case 3:
-                        if (!laptop.getColour().equals(val)) {
-                            ok = false;
-                        }
-                        break;
-
-                    case 4:
-                        if (!laptop.getRam().equals(val)) {
-                            ok = false;
-                        }
-                        break;
-                }
     
-
-            if (ok) {
-                res.add(laptop);
-            }
-        }
-
-        return res;
-    }
-    
-    }
 }
 
 
